@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if grep -qa docker /proc/1/cgroup; then
+    echo "Inside a Docker container"
+else
+    exit 1
+fi
+
 # Remove existing CUDA and NVIDIA packages
 echo "Removing existing CUDA and NVIDIA packages..."
 sudo apt-get -y --purge remove cuda nvidia-* libnvidia-*
