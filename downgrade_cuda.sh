@@ -18,7 +18,7 @@ sudo apt-get update
 
 # Install CUDA 11.8 toolkit and cuDNN library
 echo "Installing CUDA 11.8 toolkit and cuDNN library..."
-sudo apt-get -y install cuda=11.8.3-1
+sudo apt-get -y install cuda=11.8.0-1
 
 # Set environment variables
 echo "Setting environment variables..."
