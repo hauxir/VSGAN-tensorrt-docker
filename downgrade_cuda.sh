@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if grep -qa docker /proc/1/cgroup; then
-    echo "Inside a Docker container"
-else
-    exit 1
-fi
+cat /proc/1/sched | grep -q "bash" && echo "Running inside a Docker container" || exit 1
 
 # Remove existing CUDA and NVIDIA packages
 echo "Removing existing CUDA and NVIDIA packages..."
